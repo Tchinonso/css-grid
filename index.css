@@ -1,0 +1,89 @@
+body{
+	line-height: 1.6;
+	display: grid;
+	/* grid-template-rows: 10em 50vh auto 10em;
+	grid-template-columns: 1fr 5fr 2fr 1fr;
+	grid-template-areas: "header header header header"
+	"hero hero hero hero"
+	". main sidebar ."
+	"footer footer footer footer"; */
+
+	/*here is a short hand of the above*/
+	grid-template: "header header header header"10em
+	"hero hero hero hero"50vh
+	". main sidebar ."auto
+	"footer footer footer footer"10em / 1fr minmax(30em,5fr) minmax(15em,2fr) 1fr;
+	/* grid-column-gap:1em; */
+	grid-gap:1em;
+	padding: 1.5em;
+}
+
+header{
+	grid-area: header;
+}
+header,
+footer{
+	background-color: black;
+	color: yellow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hero{
+	grid-area: hero;
+	background-color: yellowgreen;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.hero-title{
+	margin: 0;
+}
+.hero-subtitle{
+	color: azure;
+	margin: 0;
+}
+main{
+	grid-area: main;
+}
+aside{
+	grid-area: sidebar;
+	background-color: darkgray;
+	padding: 2em;
+}
+footer{
+	grid-area: footer;
+}
+/*cards*/
+.card{
+	display: grid;
+	/* grid-template-columns: 1fr 3fr;
+	grid-template-rows: min-content auto;
+	grid-template-areas: "img title"
+	"img content"; */
+
+	/*short hand of writing the above comment*/
+	grid-column-gap:1.5em;
+	grid-template: 
+	"img title" min-content
+	"img content" auto / 1fr 3fr;
+	box-shadow: 0 0 1em rgba(0,0,0,0.5);
+	margin: 1.5em;
+}
+.card-img{
+	max-width: 100%;
+	grid-area: img;
+}
+.card-title{
+	margin: 0;
+	grid-area: title;
+	font-weight: 300;
+}
+.card-content{
+	grid-area: content;
+}
+a{
+	color: yellow;
+	font-size: 1.1em;
+}
